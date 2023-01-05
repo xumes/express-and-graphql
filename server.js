@@ -6,8 +6,7 @@ const {
     GraphQLString,
     GraphQLInt,
     GraphQLList,
-    GraphQLNonNull,
-    GraphQLInputObjectType
+    GraphQLNonNull
 } = require('graphql')
 const app = express()
 
@@ -130,7 +129,6 @@ const schema = new GraphQLSchema({
     query: RootQueryType,
     mutation: RootMutationType
 })
-
 
 app.use('/graphql', graphqlHTTP({
     schema: schema,
